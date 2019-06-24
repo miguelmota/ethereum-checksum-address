@@ -1,8 +1,11 @@
 {
   "name": "ethereum-checksum-address",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Convert Ethereum address to a checksummed address",
   "main": "index.js",
+  "bin": {
+    "ethereum_checksum_address": "bin/ethereum_checksum_address"
+  },
   "scripts": {
     "test": "tape test/*.js",
     "lint": "standard --fix index.js test/test.js example/example.js"
