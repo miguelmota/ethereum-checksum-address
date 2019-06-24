@@ -25,7 +25,8 @@
     "url": "https://github.com/miguelmota/ethereum-checksum-address/blob/master/LICENSE"
   },
   "dependencies": {
-    "keccak256": "^1.0.0"
+    "keccak256": "^1.0.0",
+    "meow": "^5.0.0"
   },
   "keywords": [
     "ethereum",
