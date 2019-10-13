@@ -25,21 +25,47 @@ const cli = meow(`
   }
 })
 
+if (process.stdin) {
+  process.stdin.setEncoding('utf8')
+  process.stdin.resume()
+  var content = ''
+  process.stdin.on('data', (buf) => {
+    content += buf.toString()
+  })
+  setTimeout(() => {
+    content = content.trim()
 
-const address = cli.input[0]
-const check = cli.flags.check
-const chainId = cli.flags.chain
+    let address = (content || '0').trim()
+    const check = cli.flags.check
+    const chainId = cli.flags.chain
 
-if (!address) {
-  console.log('address argument is required')
-  process.exit(1)
+    if (!content) {
+      address = cli.input[0]
+    }
+
+    run(address, check, chainId)
+    process.exit(0)
+  }, 10)
+} else {
+  const address = cli.input[0]
+  const check = cli.flags.check
+  const chainId = cli.flags.chain
+
+  run(address, check, chainId)
 }
 
-if (check) {
-  const valid = checkAddressChecksum(address, chainId)
-  console.log(valid)
-  process.exit(valid ? 0 : 1)
-} else {
-  console.log(toChecksumAddress(address, chainId))
-  process.exit(0)
+function run(address, check, chainId) {
+  if (!address) {
+    console.log('address argument is required')
+    process.exit(1)
+  }
+
+  if (check) {
+    const valid = checkAddressChecksum(address, chainId)
+    console.log(valid)
+    process.exit(valid ? 0 : 1)
+  } else {
+    console.log(toChecksumAddress(address, chainId))
+    process.exit(0)
+  }
 }
