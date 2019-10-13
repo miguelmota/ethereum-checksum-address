@@ -28,14 +28,14 @@ const cli = meow(`
 if (process.stdin) {
   process.stdin.setEncoding('utf8')
   process.stdin.resume()
-  var content = ''
+  let content = ''
   process.stdin.on('data', (buf) => {
     content += buf.toString()
   })
   setTimeout(() => {
     content = content.trim()
 
-    let address = (content || '0').trim()
+    let address = (content || '0')
     const check = cli.flags.check
     const chainId = cli.flags.chain
 
@@ -44,7 +44,6 @@ if (process.stdin) {
     }
 
     run(address, check, chainId)
-    process.exit(0)
   }, 10)
 } else {
   const address = cli.input[0]
