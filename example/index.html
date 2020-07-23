@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=yes">
+  <title>Ethereum checksum address</title>
+  <style>
+    label {
+      display: block;
+    }
+    input[type="text"] {
+      width: 350px;
+    }
+    output {
+      display: block;
+      word-break: break-all;
+    }
+    @media (max-width: 350px) {
+      input[type="text"] {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Ethereum checksum address</h1>
+  <div>
+    <label>Address</label>
+    <input type="text" id="address" value="0x90f8bf6a479f320ead074411a4b0e7944ea8c9c1" placeholder="0x90f8bf6a479f320ead074411a4b0e7944ea8c9c1" />
+  </div>
+  <div>
+    <button id="submit">checksum</button>
+  </div>
+  <output id="output"></output>
+  <a href="https://github.com/miguelmota/ethereum-checksum-address" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+  <script src="dist/bundle.js"></script>
+</body>
+</html>

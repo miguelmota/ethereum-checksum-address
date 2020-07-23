@@ -5,6 +5,10 @@
 [![License](http://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/miguelmota/ethereum-checksum-address/master/LICENSE)
 [![NPM version](https://badge.fury.io/js/ethereum-checksum-address.svg)](http://badge.fury.io/js/ethereum-checksum-address)
 
+## Demo
+
+[https://lab.miguelmota.com/ethereum-checksum-address](https://lab.miguelmota.com/ethereum-checksum-address)
+
 ## Install
 
 ```bash
