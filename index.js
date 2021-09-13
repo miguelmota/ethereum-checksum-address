@@ -1,6 +1,6 @@
 const keccak = require('keccak')
 
-function toChecksumAddress(address, chainId = null) {
+function toChecksumAddress (address, chainId = null) {
   if (typeof address !== 'string') {
     return ''
   }
@@ -28,7 +28,7 @@ function toChecksumAddress(address, chainId = null) {
   return checksumAddress
 }
 
-function checkAddressChecksum(address, chainId = null) {
+function checkAddressChecksum (address, chainId = null) {
   const stripAddress = stripHexPrefix(address).toLowerCase()
   const prefix = chainId != null ? chainId.toString() + '0x' : ''
   const keccakHash = keccak('keccak256')
@@ -47,7 +47,7 @@ function checkAddressChecksum(address, chainId = null) {
   return true
 }
 
-function stripHexPrefix(value) {
+function stripHexPrefix (value) {
   return value.slice(0, 2) === '0x' ? value.slice(2) : value
 }
 
